@@ -8,7 +8,7 @@
   = @book.title
 %p
   %b Front cover:
-  = @book.front_cover
+  = image_tag @book.front_cover.thumb('400x200#').url if @book.front_cover_stored?
 
 = link_to 'Edit', edit_book_path(@book)
 \|
