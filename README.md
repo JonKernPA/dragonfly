@@ -46,7 +46,7 @@ Preferences:
 * dev_webserver: thin
 * prod_webserver: thin
 * database: mongodb
-* orm: mongoid
+* orm: mongoid << = Changed to mongo_mapper
 * templates: haml
 * unit_test: rspec
 * integration: cucumber

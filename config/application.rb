@@ -16,7 +16,9 @@ module Dragonfly
 
     # don't generate RSpec tests for views and helpers
     config.generators do |g|
-      
+
+      g.orm :mongo_mapper
+      g.template_engine :haml
       g.test_framework :rspec, fixture: true
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       

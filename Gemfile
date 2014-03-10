@@ -8,7 +8,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
-gem 'mongoid', :github=>"mongoid/mongoid"
+gem 'mongo_mapper', :git => "git://github.com/mongomapper/mongomapper.git", :tag => "v0.13.0.beta2"
+gem 'bson_ext'
+
 gem 'simple_form'
 gem 'thin'
 group :development do
@@ -29,5 +31,4 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'email_spec'
   gem 'launchy'
-  gem 'mongoid-rspec', '>= 1.10.0'
 end
