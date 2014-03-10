@@ -13,7 +13,7 @@
     %tr
       %td= book.author
       %td= book.title
-      %td= book.front_cover
+      %td= image_tag book.front_cover.thumb('100x50#').url if book.front_cover_stored?
       %td= link_to 'Show', book
       %td= link_to 'Edit', edit_book_path(book)
       %td= link_to 'Destroy', book, :method => :delete, :data => { :confirm => 'Are you sure?' }
