@@ -1,5 +1,12 @@
-Dragonfly with MongoMapper
-=========
+# Dragonfly with MongoMapper
+
+Major kudos to Mark Evans et al...
+
+I wanted to test out
+
+* [Dragonfly](http://github.com/markevans/dragonfly) gem.
+* with [Dragonfly::MongoDataStore](https://github.com/markevans/dragonfly-mongo_data_store) gem.
+
 
 This application was generated with the [rails_apps_composer](https://github.com/RailsApps/rails_apps_composer) gem
 provided by the [RailsApps Project](http://railsapps.github.io/).
