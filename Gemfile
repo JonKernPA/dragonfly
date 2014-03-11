@@ -12,6 +12,7 @@ gem 'mongo_mapper', :git => "git://github.com/mongomapper/mongomapper.git", :tag
 gem 'bson_ext'
 gem 'dragonfly', '~>1.0.3'
 gem 'dragonfly-mongo_data_store'
+gem 'foundation-rails'
 
 gem 'simple_form'
 gem 'thin'
