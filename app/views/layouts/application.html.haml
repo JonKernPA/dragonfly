@@ -10,8 +10,15 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    %header
+    %header.row
       = render 'layouts/navigation'
-    %main{:role => "main"}
+    %main.row
       = render 'layouts/messages'
       = yield
+    %footer.row
+      .medium-4.columns
+        Copyright 2014
+      .medium-4.columns
+        All rights reserved.
+      .medium-4.columns
+        Contact Us

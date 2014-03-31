@@ -1,0 +1,20 @@
+$primary-link-color: #2E6AA0;
+
+$btn-primary: $primary-link-color;
+$btn-primary-highlight: spin($btn-primary, 20%);
+
+$btn-info: #5bc0de;
+$btn-info-highlight: #2f96b4;
+
+$btn-success: #62c462;
+$btn-success-highlight: #51a351;
+
+$btn-alert: lighten(orange, 15%);
+$btn-alert-highlight: orange;
+
+$btn-danger: #ee5f5b;
+$btn-danger-highlight: #bd362f;
+
+$btn-inverse: #444;
+$btn-inverse-highlight: darken(gray, 15%);
+

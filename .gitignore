@@ -71,6 +71,7 @@ pickle-email-*.html
 
 # RubyMine project files
 .idea
+atlassian-ide-plugin.xml
 
 # Textmate project files
 /*.tmproj

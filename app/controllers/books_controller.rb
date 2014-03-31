@@ -5,16 +5,30 @@ class BooksController < ApplicationController
   # GET /books.json
   def index
     @books = Book.all
+    @photos = []
+    @books.map {|b| @photos << b.front_cover}
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @books.map{|book| book.to_jq_upload } }
+    end
   end
 
   # GET /books/1
   # GET /books/1.json
   def show
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @book }
+    end
   end
 
   # GET /books/new
   def new
     @book = Book.new
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @book }
+    end
   end
 
   # GET /books/1/edit
@@ -28,8 +42,12 @@ class BooksController < ApplicationController
 
     respond_to do |format|
       if @book.save
-        format.html { redirect_to @book, notice: 'Book was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @book }
+        format.html {
+          render :json => [@book.to_jq_upload].to_json,
+                 :content_type => 'text/html',
+                 :layout => false
+        }
+        format.json { render json: {files: [@book.to_jq_upload]}, status: :created, location: @book }
       else
         format.html { render action: 'new' }
         format.json { render json: @book.errors, status: :unprocessable_entity }
@@ -69,6 +87,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
+      puts params.inspect
       params.require(:book).permit(:author, :title, :front_cover)
     end
 end

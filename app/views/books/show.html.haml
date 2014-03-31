@@ -10,7 +10,7 @@
   %p
     %b= "Front cover - '#{@book.front_cover_name}' (#{@book.front_cover.width}px x #{@book.front_cover.height}px):"
     %br
-    = image_tag @book.front_cover.url
+    =link_to(image_tag(@book.front_cover.thumb('600x').url), @book.front_cover.url)
 
 = link_to 'Edit', edit_book_path(@book)
 \|

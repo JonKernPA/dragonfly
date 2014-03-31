@@ -1,0 +1,55 @@
+@import "colors";
+@import "foundation/components/buttons";
+
+
+// $padding - Used to build padding for buttons Default: $button-med or rem-calc(12)
+$padding: $button-tny;
+// Primary color set in settings file. Default: $primary-color.
+$bg: orange;
+// If true, set to button radius which is $global-radius or explicitly set radius amount in px (ex. $radius:10px). Default:false.
+$radius: true;
+// We can set $full-width:true to remove side padding extend width. Default:false
+$full-width: false;
+// We can set $disabled:true to create a disabled transparent button. Default:false
+$disabled: false;
+// $is-input - <input>'s and <button>'s take on strange padding. We added this to help fix that. Default:false
+$is-input: false;
+
+.button-success {
+  @include button($padding, $btn-success, $radius, $full-width, $disabled, true);
+}
+.button-primary {
+  @include button($padding, $btn-primary, $radius, $full-width, $disabled, $is-input);
+}
+.button-alert {
+  @include button($padding, $btn-alert, $radius, $full-width, $disabled, $is-input);
+}
+.button-danger {
+  @include button($padding, $btn-danger, $radius, $full-width, $disabled, $is-input);
+}
+
+// There are some subtle effects going on here. Normally, where this is used, you would see
+// a "Browse" button. Instead, this makes it look like a normal button. However, where the
+// mouse can click on the button to invoke the Browse dialog, is very sensitive.
+// The exercise is left to the student to figure out WTH the magic is (I'm just a hacker).
+.button-success {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  margin-right: 4px;
+}
+
+// The 'input' results in the "browse files" default button showing up as a styled button
+.button-success input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  border: solid transparent;
+  border-width: 0 0 100px 200px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -moz-transform: translate(-300px, 0) scale(4);
+  direction: ltr;
+  cursor: pointer;
+}

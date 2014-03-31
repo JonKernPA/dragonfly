@@ -13,6 +13,11 @@ gem 'bson_ext'
 gem 'dragonfly', '~>1.0.3'
 gem 'dragonfly-mongo_data_store'
 gem 'foundation-rails'
+gem 'jquery-fileupload-rails'
+gem 'foundation-icons-sass-rails'
+# Try and get around the repetitive sass errors dumping to logs after installing foundation icon font
+# By downgrading Sass from the latest 3.3.0 to an earlier version
+gem 'sass', '3.2.13'
 
 gem 'simple_form'
 gem 'thin'
