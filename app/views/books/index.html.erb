@@ -44,7 +44,7 @@
   <% unless @books.empty? %>
       <ul class="clearing-thumbs small-block-grid-3" data-clearing>
         <% @books.each do |book|
-             photo = book.front_cover
+          photo = book.front_cover
         %>
             <li>
               <%= link_to(image_tag(photo.thumb('400x').url, options={"data-caption" => book.title}), photo.url, options={title: book.title}) %>

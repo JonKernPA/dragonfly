@@ -9,7 +9,9 @@ class BooksController < ApplicationController
     @books.map {|b| @photos << b.front_cover}
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @books.map{|book| book.to_jq_upload } }
+      format.json do
+        render json: @books.map { |book| book.to_jq_upload }
+      end
     end
   end
 
@@ -87,7 +89,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      puts params.inspect
+      #puts params.inspect
       params.require(:book).permit(:author, :title, :front_cover)
     end
 end
